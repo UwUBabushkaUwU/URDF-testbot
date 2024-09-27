@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<robot name="testbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find description)/urdf/materials.xacro"/>
+<!-- <xacro:include filename="$(find description)/urdf/testbot.trans"/> -->
+<xacro:include filename="$(find description)/urdf/testbot.gazebo"/>
+<link name="base_link">
+  <inertial>
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <mass value="10.0"/>
+    <inertia ixx="0.01" iyy="0.02" izz="0.03" ixy="0.03" iyz="0.04" ixz="0.04"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_planetary_p2_v1_2">
+  <inertial>
+    <origin xyz="0.04118987844170208 -8.108254794692016e-06 0.000250596805274686" rpy="0 0 0"/>
+    <mass value="2.3755553699222616"/>
+    <inertia ixx="0.007233" iyy="0.003977" izz="0.003976" ixy="-1e-06" iyz="0.0" ixz="1.2e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.756732 -0.151207 -0.067818" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://description/meshes/motor_planetary_p2_v1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.756732 -0.151207 -0.067818" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://description/meshes/motor_planetary_p2_v1_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_planetary_p2_v1_4">
+  <inertial>
+    <origin xyz="0.0001313422839553935 0.041189495140773136 -0.00020947496986596648" rpy="0 0 0"/>
+    <mass value="2.3755553699222616"/>
+    <inertia ixx="0.003977" iyy="0.007233" izz="0.003976" ixy="6e-06" iyz="-1e-05" ixz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.350608 -0.27833 -0.067818" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://description/meshes/motor_planetary_p2_v1_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.350608 -0.27833 -0.067818" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://description/meshes/motor_planetary_p2_v1_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_planetary_p2_v1_1">
+  <inertial>
+    <origin xyz="-0.04118998789165343 0.00021759055173636854 0.00012263260280097332" rpy="0 0 0"/>
+    <mass value="2.3755553699222616"/>
+    <inertia ixx="0.007233" iyy="0.003976" izz="0.003977" ixy="-1e-05" iyz="-0.0" ixz="-5e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.223486 0.127794 -0.067818" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://description/meshes/motor_planetary_p2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.223486 0.127794 -0.067818" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://description/meshes/motor_planetary_p2_v1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_planetary_p2_v1_3">
+  <inertial>
+    <origin xyz="0.0002361733200544336 -0.04118941036184415 -7.71119074641502e-05" rpy="0 0 0"/>
+    <mass value="2.3755553699222616"/>
+    <inertia ixx="0.003976" iyy="0.007233" izz="0.003977" ixy="-1.1e-05" iyz="3e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.629609 0.254917 -0.067818" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://description/meshes/motor_planetary_p2_v1_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.629609 0.254917 -0.067818" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://description/meshes/motor_planetary_p2_v1_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="continuous">
+  <origin xyz="0.756732 0.151207 0.067818" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="motor_planetary_p2_v1_2"/>
+  <axis xyz="-1.0 -0.0 -5.9e-05"/>
+</joint>
+
+<joint name="Rev2" type="continuous">
+  <origin xyz="0.350608 0.27833 0.067818" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="motor_planetary_p2_v1_4"/>
+  <axis xyz="0.0 -1.0 -5.9e-05"/>
+</joint>
+
+<joint name="Rev3" type="continuous">
+  <origin xyz="0.223486 -0.127794 0.067818" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="motor_planetary_p2_v1_1"/>
+  <axis xyz="1.0 0.0 -5.9e-05"/>
+</joint>
+
+<joint name="Rev4" type="continuous">
+  <origin xyz="0.629609 -0.254917 0.067818" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="motor_planetary_p2_v1_3"/>
+  <axis xyz="-0.0 -1.0 -5.9e-05"/>
+</joint>
+
+</robot>

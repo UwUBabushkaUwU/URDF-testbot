@@ -1,0 +1,17 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"motor_planetary_p2_v1_2" [label="motor_planetary_p2_v1_2"];
+"motor_planetary_p2_v1_4" [label="motor_planetary_p2_v1_4"];
+"motor_planetary_p2_v1_1" [label="motor_planetary_p2_v1_1"];
+"motor_planetary_p2_v1_3" [label="motor_planetary_p2_v1_3"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "Rev1" [label="xyz: 0.756732 0.151207 0.067818 \nrpy: 0 -0 0"]
+"Rev1" -> "motor_planetary_p2_v1_2"
+"base_link" -> "Rev2" [label="xyz: 0.350608 0.27833 0.067818 \nrpy: 0 -0 0"]
+"Rev2" -> "motor_planetary_p2_v1_4"
+"base_link" -> "Rev3" [label="xyz: 0.223486 -0.127794 0.067818 \nrpy: 0 -0 0"]
+"Rev3" -> "motor_planetary_p2_v1_1"
+"base_link" -> "Rev4" [label="xyz: 0.629609 -0.254917 0.067818 \nrpy: 0 -0 0"]
+"Rev4" -> "motor_planetary_p2_v1_3"
+}
