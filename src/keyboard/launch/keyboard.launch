@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="keyboard" type="keyboard.py" name="keyboard_node" output="screen"/>
+</launch>

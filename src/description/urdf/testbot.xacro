@@ -4,6 +4,7 @@
 <xacro:include filename="$(find description)/urdf/materials.xacro"/>
 <!-- <xacro:include filename="$(find description)/urdf/testbot.trans"/> -->
 <xacro:include filename="$(find description)/urdf/testbot.gazebo"/>
+
 <link name="base_link">
   <inertial>
     <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
@@ -135,6 +136,120 @@
   <parent link="base_link"/>
   <child link="motor_planetary_p2_v1_3"/>
   <axis xyz="-0.0 -1.0 -5.9e-05"/>
+</joint>
+
+<!-- Wheel Links -->
+<link name="wheel_front_left">
+  <inertial>
+    <origin xyz="0.5 0.5 0.0" rpy="0 0 0"/>
+    <mass value="0.5"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.5 0.5 0.0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.1" length="0.05"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.5 0.5 0.0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.1" length="0.05"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_front_right">
+  <inertial>
+    <origin xyz="0.5 -0.5 0.0" rpy="0 0 0"/>
+    <mass value="0.5"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.5 -0.5 0.0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.1" length="0.05"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.5 -0.5 0.0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.1" length="0.05"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rear_left">
+  <inertial>
+    <origin xyz="-0.5 0.5 0.0" rpy="0 0 0"/>
+    <mass value="0.5"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.5 0.5 0.0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.1" length="0.05"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.5 0.5 0.0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.1" length="0.05"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_rear_right">
+  <inertial>
+    <origin xyz="-0.5 -0.5 0.0" rpy="0 0 0"/>
+    <mass value="0.5"/>
+    <inertia ixx="0.001" iyy="0.001" izz="0.001"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.5 -0.5 0.0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.1" length="0.05"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.5 -0.5 0.0" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius="0.1" length="0.05"/>
+    </geometry>
+  </collision>
+</link>
+
+<!-- Wheel Joints -->
+<joint name="joint_wheel_front_left" type="continuous">
+  <origin xyz="0.5 0.5 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_front_left"/>
+  <axis xyz="0 0 1"/>
+</joint>
+
+<joint name="joint_wheel_front_right" type="continuous">
+  <origin xyz="0.5 -0.5 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_front_right"/>
+  <axis xyz="0 0 1"/>
+</joint>
+
+<joint name="joint_wheel_rear_left" type="continuous">
+  <origin xyz="-0.5 0.5 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_rear_left"/>
+  <axis xyz="0 0 1"/>
+</joint>
+
+<joint name="joint_wheel_rear_right" type="continuous">
+  <origin xyz="-0.5 -0.5 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_rear_right"/>
+  <axis xyz="0 0 1"/>
 </joint>
 
 </robot>

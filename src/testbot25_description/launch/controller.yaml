@@ -1,0 +1,23 @@
+testbot25:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers --------------------------------------
+  Revolute_15_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Revolute_15
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Revolute_16_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Revolute_16
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Revolute_17_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Revolute_17
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  Revolute_18_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: Revolute_18
+    pid: {p: 100.0, i: 0.01, d: 10.0}

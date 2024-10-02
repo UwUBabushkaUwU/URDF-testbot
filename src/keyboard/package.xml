@@ -1,0 +1,12 @@
+<package format="2">
+  <name>keyboard</name>
+  <version>0.0.1</version>
+  <description>Keyboard control package</description>
+  <maintainer email="chinarrm23@iitk.ac.in">Chinar Mhatre</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>python3</build_depend>
+  <exec_depend>python3</exec_depend>
+
+</package>
