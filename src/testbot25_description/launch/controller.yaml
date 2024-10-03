@@ -5,19 +5,42 @@ testbot25:
     publish_rate: 50
 
   # Position Controllers --------------------------------------
-  Revolute_15_position_controller:
-    type: effort_controllers/JointPositionController
+  # Revolute_15_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: Revolute_15
+  #   pid: {p: 60.0, i: 0.01, d: 10.0}
+  # Revolute_16_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: Revolute_16
+  #   pid: {p: 60.0, i: 0.01, d: 10.0}
+  # Revolute_17_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: Revolute_17
+  #   pid: {p: 60.0, i: 0.01, d: 10.0}
+  # Revolute_18_position_controller:
+  #   type: effort_controllers/JointPositionController
+  #   joint: Revolute_18
+  #   pid: {p: 60.0, i: 0.01, d: 10.0}
+
+
+  #velocity controllers
+
+  Revolute_15_velocity_controller:
+    type: effort_controllers/JointVelocityController
     joint: Revolute_15
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute_16_position_controller:
-    type: effort_controllers/JointPositionController
+    pid: {p: 1.0, i: 0.1, d: 0.01}
+
+  Revolute_16_velocity_controller:
+    type: effort_controllers/JointVelocityController
     joint: Revolute_16
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute_17_position_controller:
-    type: effort_controllers/JointPositionController
+    pid: {p: 1.0, i: 0.1, d: 0.01}
+
+  Revolute_17_velocity_controller:
+    type: effort_controllers/JointVelocityController
     joint: Revolute_17
-    pid: {p: 100.0, i: 0.01, d: 10.0}
-  Revolute_18_position_controller:
-    type: effort_controllers/JointPositionController
+    pid: {p: 1.0, i: 0.1, d: 0.01}
+
+  Revolute_18_velocity_controller:
+    type: effort_controllers/JointVelocityController
     joint: Revolute_18
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.1, d: 0.01}

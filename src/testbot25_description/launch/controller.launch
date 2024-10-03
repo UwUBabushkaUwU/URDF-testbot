@@ -2,7 +2,9 @@
 
 <rosparam file="$(find testbot25_description)/launch/controller.yaml" command="load"/>
 
-<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/testbot25" args="Revolute_15_position_controller Revolute_16_position_controller Revolute_17_position_controller Revolute_18_position_controller joint_state_controller "/>
+<!-- <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/testbot25" args="Revolute_15_position_controller Revolute_16_position_controller Revolute_17_position_controller Revolute_18_position_controller joint_state_controller "/> -->
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/testbot25" args="Revolute_15_velocity_controller Revolute_16_velocity_controller Revolute_17_velocity_controller Revolute_18_velocity_controller joint_state_controller "/>
+
 
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
   <remap from="/joint_states" to="/testbot25/joint_states"/>
